@@ -1,0 +1,12 @@
+version: "3" ## especifica a versão do docker-compose file
+
+services: ## Define um serviço
+  api: ## nome do serviço
+    build: . ## localização do dockerfile
+    environment:
+      - PORT=3035
+      - APP_NAME=API_MODEL-TDD
+    ports:
+      - "3035:3035" ## redirecionamento de porta quando chegar alguma requisição na porta 3001 chama o container na porta configurada no env acima (Ao alterar informar a MESMA porta para que o container funcione corretamente)
+    volumes:
+      - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app
