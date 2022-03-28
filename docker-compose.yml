@@ -7,6 +7,6 @@ services: ## Define um serviço
       - PORT=3035
       - APP_NAME=API_MODEL-TDD
     ports:
-      - "3035:3035" ## redirecionamento de porta quando chegar alguma requisição na porta 3001 chama o container na porta configurada no env acima (Ao alterar informar a MESMA porta para que o container funcione corretamente)
+      - "3035:3035" ## redirecionamento de porta
     volumes:
       - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app

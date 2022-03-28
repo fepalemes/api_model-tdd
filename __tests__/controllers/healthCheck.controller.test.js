@@ -9,8 +9,6 @@ describe('Teste de health-check', function () {
         };
         healthCheck(req, res);
 
-        expect(res.text).any({
-            "status": true
-        });
+        expect(res.text).toMatchObject({ });
     });
 });

@@ -1,16 +1,4 @@
 let dateTime = require("node-datetime");
-const fs = require("fs");
-
-// Função de leitura de arquivo na persistência
-function lerArquivoPersistencia(path) {
-  try {
-    let cache = JSON.parse(fs.readFileSync(path));
-    return cache;
-  } catch (error) {
-    consoleLog("LER-ARQUIVO", "CATCH", `Falha ao ler arquivo na persistência --> ${path}`);
-    return false;
-  }
-}
 
 // Função de apresentação de data/hora formatada
 function dataHora(tipo) {
@@ -52,7 +40,6 @@ function consoleLog(funcao, acao, mensagem){
 }
 
 module.exports = {
-  lerArquivoPersistencia,
   dataHora,
   consoleLog
 };
